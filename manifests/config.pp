@@ -2,14 +2,6 @@
 #
 class rethinkdb::config inherits rethinkdb {
 
-  file { $working_dir:
-    ensure  => directory,
-    owner   => $user,
-    group   => $group,
-    mode    => '0644',
-    require => Class['rethinkdb::install'],
-  }
-
   file { $log_file:
     ensure  => file,
     owner   => $user,
